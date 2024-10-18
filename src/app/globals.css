@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font2: "Instrument Serif", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fff;
+    --black: #000;
+  }
+}
+
+body,html{
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  width: 100%;
+}
+body, * {
+  font-family: "Afacad", sans-serif;
+  font-optical-sizing: auto;
+}
+.font2{
+  font-family: var(--font2);
+}
+body {
+  color: var(--black);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.container{
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.btn{
+  padding: 2px 14px;
+  font-size: 22px;
+  text-transform: uppercase;
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+  gap: 5px;
+  text-align: center;
+  border-radius: 50px;
+  align-items: center;
+  transition: .3s;
+}
+
+.btn-white{
+  color: var(--black);
+  background: #fff;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+.btn-white-outline{
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+.btn-yellow{
+  background: #EBF677;
+  color: #000;
+  border: 1px solid var(--black);
+
+}
+.btn-black-outline{
+  color: var(--black);
+  border: 1px solid var(--black);
+  &:hover{
+    background: #fff;
+  }
+}
+.btn-black{
+  color: var(--black);
+  background: #fff;
+  border: 1px solid var(--black);
+  &:hover{
+    background: #fff;
+  }
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.underline{
+  position: relative;
+  display: inline-block;
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--black);
+  }
+  &.black{
+    &:after{
+      background: var(--black);
+    }
+  }
+}
+.text-center{
+  text-align: center;
+}
+.title{
+  font-size: 48px;
+  line-height: 1.1;
+  @media (max-width: 1000px) {
+    font-size: 40px;
+  }
+}
+
+.stars-strip {
+  width: 100%;                  /* Заполняет всю ширину */
+  height: 15px;                 /* Высота полосы */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="black"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.831 1.524 8.132-7.46-3.992-7.46 3.992 1.524-8.132-6.064-5.831 8.332-1.151z"/></svg>'); /* Изображение звезды */
+  background-repeat: repeat-x;  /* Повторение по горизонтали */
+  background-position: 0;       /* Центрирование по вертикали */
+  background-size: 25px 15px;   /* Размер звезды и расстояние */
+  position: relative;           /* Для псевдоэлементов */
+  animation: stripeAnimate 90s forwards infinite;
+  &:after, &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;                 /* Ширина градиента */
+    height: 100%;
+    z-index: 1;
+  }
+
+  &:after{
+    right: 0;
+    background: linear-gradient(to left, var(--background), rgba(0, 0, 0, 0));  /* Градиент справа */
+  }
+  &:before{
+    left: 0;
+    background: linear-gradient(to right, var(--background), rgba(0, 0, 0, 0));  /* Градиент справа */
+  }
+}
+
+
+
+
+.stars-strip
+
+/* Анимация */
+@keyframes stripeAnimate {
+  0% { background-position: 0 0; }
+  100% { background-position: -100% 0; }
+}
+@keyframes stripeAnimate {
+  0%{
+    background-position: 0;
+  }
+  100%{
+    background-position: 100%;
+  }
+}
+
+
+.mainTitle, .mainTitle span{
+  font-size: 77px;
+  line-height: 1.3;
+  font-family: var(--font2);
+  @media (max-width: 1000px) {
+    font-size: 50px;
+  }
+}
+
+.tag{
+  height: 50px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  &:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    border-radius: 50px;
+    left: 0;
+    margin-top: 6px;
+    transform: translateY(-50%);
+    border: 1px solid #000;
+  }
+}
+
+.subtitle{
+  font-size: 48px;
+  line-height: 59px;
+  @media (max-width: 1000px) {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+}
+
+.withArrow{
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000 !important; /* Цвет стрелок */
+    top: 13px !important; /* Расположение сверху */
+    transform: scaleY(.75);
+    &:after{
+      font-size: 25px !important;
+    }
+  }
+  .swiper-wrapper{
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .swiper{
+    margin-top: -40px;
+    margin-bottom: -40px;
+  }
+  .swiper-button-prev{
+    right: 40px !important;
+    left: initial !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 20px; /* Размер стрелок */
+  }
+}
+
+.top-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(10px, -50%);
+}
+.bottom-left{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-10px, 50%);
+}
+
+/* Основной стиль для сообщения */
+.message {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 310px;
+  padding: 10px 20px;
+  font-size: 18px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  transition: .5s;
+}
+
+/* Показывать сообщение */
+.message.show {
+  pointer-events: initial;
+  transform: translate(-50%, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Скрывать сообщение */
+.message.hidden {
+  transform: translate(-50%, -200px);
+}
+
+/* Цвет для успешного сообщения */
+.bg-green {
+  background-color: #28a745; /* зеленый цвет */
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4);
+}
+
+/* Цвет для ошибки */
+.bg-red {
+  background-color: #dc3545; /* красный цвет */
+}
+
+/* Для кастомной тени */
+.shadow-custom-green {
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4);
+}
+

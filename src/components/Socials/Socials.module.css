@@ -1,0 +1,87 @@
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.iconWrapper {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.iconWrapper:hover {
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.icon {
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+
+/* Размеры 48px */
+.sizeLarge {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    @media (max-width: 1000px) {
+        height: 28px;
+        width: 28px
+    }
+}
+.sizeLarge svg {
+    max-width: 24px;
+    max-height: 24px;
+    @media (max-width: 1000px) {
+        max-width: 14px;
+        max-height: 14px;
+    }
+}
+/* Размеры 24px */
+.sizeSmall {
+    width: 30px;
+    height: 30px;
+}
+.sizeSmall svg{
+    max-width: 14px;
+    max-height: 14px;
+}
+/* Белая тема */
+.whiteWrapper {
+    background: #000;
+}
+
+.whiteWrapper:hover {
+    background: #fff;
+    border-color: #000;
+}
+
+.whiteIcon {
+    fill: #fff;
+}
+
+.whiteWrapper:hover .whiteIcon {
+    fill: #000;
+}
+
+/* Черная тема */
+.blackWrapper {
+    background: #fff;
+    border: 1px solid #000;
+}
+
+.blackWrapper:hover {
+    background: #000;
+    border-color: #fff;
+}
+
+.blackIcon {
+    fill: #000;
+}
+
+.blackWrapper:hover .blackIcon {
+    fill: #fff;
+}

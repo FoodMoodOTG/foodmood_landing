@@ -1,0 +1,203 @@
+.header {
+    padding: 10px 0;
+}
+
+.sideMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    height: 100%;
+    padding: 40px 10px 10px 20px;
+    background-color: #FAF5CF;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.5s ;
+    z-index: 1000;
+    @media (max-width: 500px) {
+        width: 100vw;
+    }
+}
+.dropTitle{
+    font-weight: 500;
+    font-size: 15px;
+}
+.drop{
+    /*display: none;*/
+    position: absolute;
+    top: 40px;
+    padding: 18px 15px;
+    background: #B4D363;
+    font-size: 15px;
+    min-width: 245px;
+    left: 0;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    transform-origin: top;
+    opacity: 0;
+    border-radius: 17px;
+    gap: 10px;
+    transform: scaleY(0);
+    transition: .5s;
+    color: #000;
+}
+.dropLink{
+    font-size: 15px;
+}
+.dropLink:hover{
+    text-decoration: underline;
+}
+.link{
+    transition: .3s;
+    font-weight: 300;
+    padding: 10px 0;
+    &:hover{
+        color: #000;
+        font-weight: 600;
+    }
+}
+.nav li:hover>div{
+    transform: scaleY(1);
+    opacity: 1;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+.headerRow{
+    display: flex;
+    padding-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo{
+}
+.logoRow{
+    display: flex;
+    align-items: center;
+}
+.burger{
+    position: relative;
+    user-select: none;
+
+    z-index: 1001;
+    cursor: pointer;
+    font-weight: 300;
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+.logoMain{
+
+}
+.nav{
+    display: flex;
+    font-size: 16px;
+    margin-left: 20px;
+    padding-top: 7px;
+    gap: 17px;
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+.nav li{
+    position: relative;
+}
+.burgerIsActive{
+    color: #000;
+}
+.sideMenu.open {
+    right: 0;
+}
+
+.menuList {
+    list-style: none;
+    text-align: center;
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding: 15px 0;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.menuList li {
+}
+.info{
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 35px 0 20px ;
+    background: #B4D363;
+
+    width: 100%;
+    margin: auto 15px 0;
+}
+.info h4{
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.menuList li a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+.menuList li:last-child a:after{
+    display: none;
+}
+.menuList li a:after{
+    content: '';
+    width: 1px;
+    display: block;
+    height: 30px;
+    background: #000;
+}
+
+.menuList li a:hover {
+    color: #c7ff00;
+}
+
+.contactInfo {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    max-width: 213px;
+    margin: 0px auto 40px;
+}
+.contactInfo p, .contactInfo a{
+    margin-bottom: 7px;
+}
+.contactInfo a {
+    display: block;
+}
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.socialIcons svg {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.socialIcons svg:hover {
+    color: #c7ff00;
+}

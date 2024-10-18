@@ -1,0 +1,40 @@
+/* Input.module.css */
+
+.inputGroup {
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input {
+    width: 100%;
+    padding: 4px 24px;
+    font-size: 22px;
+    height: 69px;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    &:focus{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+        border-color: rgba(0, 0, 0, 0.49);
+    }
+    @media (max-width: 1000px) {
+        height: 52px;
+        font-size: 18px;
+        padding-left: 20px;
+    }
+}
+
+.inputError {
+    border-color: red;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
