@@ -1,0 +1,14 @@
+.title{
+    width: 820px;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    z-index: 20;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}

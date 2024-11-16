@@ -1,5 +1,6 @@
 .header {
     padding: 10px 0;
+    position: relative;
 }
 
 .sideMenu {
@@ -65,6 +66,8 @@
     opacity: 1;
 }
 .btns{
+    position: relative;
+    z-index: 100;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -97,9 +100,13 @@
     }
 }
 .logoMain{
+    position: relative;
+    z-index: 100;
 
 }
 .nav{
+    position: relative;
+    z-index: 100;
     display: flex;
     font-size: 16px;
     margin-left: 20px;

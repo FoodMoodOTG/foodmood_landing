@@ -7,8 +7,9 @@ import {FaBars, FaCross, FaCrosshairs, FaTimes} from 'react-icons/fa';
 import Socials from "@/components/Socials/Socials";
 import { IoClose } from "react-icons/io5";
 import LinkIcon from "@/app/icons/LinkIcon";
+import clsx from "clsx";
 
-const Header = () => {
+const Header = ({isWhite}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -41,11 +42,11 @@ const Header = () => {
               <Image src="/images/logo.png" width={150} height={60} alt="FoodMood Logo"/>
             </div>
             <ul className={styles.nav}>
-              <li><a className={styles.link} href="#features">Features</a></li>
-              <li><a className={styles.link} href="#benefits">Benefits</a></li>
-              <li><a className={styles.link} href="#reviews">Reviews</a></li>
+              <li><a className={styles.link + ' ' + clsx({'text-white': isWhite})} href="#features">Features</a></li>
+              <li><a className={styles.link + ' ' + clsx({'text-white': isWhite})} href="#benefits">Benefits</a></li>
+              <li><a className={styles.link + ' ' + clsx({'text-white': isWhite})} href="#reviews">Reviews</a></li>
               <li>
-                <a className={styles.link} href="#contacts">
+                <a className={styles.link + ' ' + clsx({'text-white': isWhite})} href="#contacts">
                   Contacts
                 </a>
                 <div className={styles.drop}>
@@ -81,7 +82,7 @@ const Header = () => {
             {!isMenuOpen ? <div className={"flex items-center"} style={{display: 'flex', gap: '10px'}}>
               <a href="https://foodmood.menu" target={'_blank'} className="btn btn-white-outline"
                  style={{fontSize: '16px'}}>Demo</a>
-              <FaBars onClick={toggleMenu} style={{fontSize: '25px'}}/>
+              <FaBars onClick={toggleMenu} color={isWhite ? "white" : 'black'} style={{fontSize: '25px'}}/>
             </div> : <IoClose onClick={toggleMenu} style={{fontSize: '32px'}}/>}
           </div>
         </div>

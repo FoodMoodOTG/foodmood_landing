@@ -187,6 +187,9 @@ body {
     font-size: 50px;
   }
 }
+.mainTitle.lh1{
+  line-height: 1 !important;
+}
 
 .tag{
   height: 50px;
@@ -306,3 +309,14 @@ body {
   box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4);
 }
 
+
+.circle{
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 47px;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 47px;
+}
