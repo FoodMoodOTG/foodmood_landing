@@ -39,7 +39,7 @@ function Page() {
           <div className={classes.text}>With FoodMood, you can design a menu for any kind of business — from an elegant
             restaurant to a cozy
             bakery, from a pizzeria to a signature steakhouse. Our service provides flexible tools that allow you to add
-            any menu items and categories, so your menu is attractive and perfectly reflects your establishment's style.
+            any menu items and categories, so your menu is attractive and perfectly reflects your establishment&apos;s style.
           </div>
           <a href="tel:+88000000000" className="btn btn-black lg:hidden mt-[30px]" style={{fontSize: '16px', fontWeight: 400}}>
             get started
