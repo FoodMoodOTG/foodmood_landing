@@ -1,0 +1,30 @@
+.btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #1c499e;
+    cursor: pointer;
+    transform: translate(30%, -30%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.56);
+    padding-bottom: 2px;
+    opacity: 0;
+    transition: .3s;
+    pointer-events: none;
+}
+.wrp:hover .btn{
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.wrp{
+    position: relative;
+    width: fit-content;
+}

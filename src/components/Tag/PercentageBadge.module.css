@@ -1,0 +1,21 @@
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 19px;
+    color: #000;
+    border: 1px solid #000;
+    font-weight: 600;
+    width: fit-content;
+
+}
+
+.text {
+    margin-right: 5px;
+}
+
+.icon {
+    font-size: 12px;
+}
