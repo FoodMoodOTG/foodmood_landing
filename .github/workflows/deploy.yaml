@@ -49,8 +49,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /root/landing
-            docker-compose down
-            docker-compose pull ${{ secrets.DOCKER_USERNAME }}/foodmood-landing:latest
-            docker-compose up -d
-            service nginx restart
+            cd /root/landing/
+            docker pull ${{ secrets.DOCKER_USERNAME }}/foodmood-landing:latest
+            docker stop foodmood-landing || true
+            docker rm foodmood-landing || true
+            docker run -d --name foodmood-landing -p 3000:3000 -v .:/app -v /app/node_modules ${{ secrets.DOCKER_USERNAME }}/foodmood-landing:latest
+
