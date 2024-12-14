@@ -13,7 +13,11 @@ function AnimateText({ text, className, children }) {
 
   useEffect(() => {
     const words = textRef.current.querySelectorAll('span');
+    const mob = window.innerWidth < 700
 
+    if(mob){
+      return
+    }
     // Настройка анимации с использованием ScrollTrigger
     gsap.fromTo(
       words,
@@ -35,7 +39,7 @@ function AnimateText({ text, className, children }) {
         },
       }
     );
-  }, []);
+  }, [isMob]);
 
   return (
     <div ref={textRef} className={className}>

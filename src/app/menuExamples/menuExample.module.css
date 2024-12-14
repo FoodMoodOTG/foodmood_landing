@@ -18,11 +18,18 @@
 }
 .menuExample{
     border: 1px solid #000;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
     border-radius: 30px;
+    /*height: 630px;*/
+    /*@media (max-width: 450px) {*/
+    /*    border-radius: 40px;*/
+    /*}*/
 
+}
+.menuExampleImage{
+    width: 100%;
+    border-radius: 30px;
+    height: 100%;
+    object-fit: cover;
 }
 .text{
     font-size: 22px;

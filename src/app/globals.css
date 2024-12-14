@@ -102,7 +102,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.underline{
+.underlineAfter{
   position: relative;
   display: inline-block;
   &:after{
@@ -161,14 +161,6 @@ body {
 
 
 
-
-.stars-strip
-
-/* Анимация */
-@keyframes stripeAnimate {
-  0% { background-position: 0 0; }
-  100% { background-position: -100% 0; }
-}
 @keyframes stripeAnimate {
   0%{
     background-position: 0;
@@ -309,6 +301,25 @@ body {
   box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4);
 }
 
+.menuExampleSwiper{
+  .swiper-slide{
+    /*height: 632px;*/
+    img{
+      /*height: 632px;*/
+    }
+  }
+  @media (max-width: 450px) {
+    height: calc(219vw + 60px);
+
+    .swiper-slide{
+    }
+    img{
+      height: 219vw;
+      /*height: 500px;*/
+      /*object-fit: contain;*/
+    }
+  }
+}
 
 .circle{
   border: 1px solid #000;

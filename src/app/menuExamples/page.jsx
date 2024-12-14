@@ -26,6 +26,16 @@ function StepItem({title, img, classes, text, index}){
 function Page() {
   const isMob = useMediaQuery(false, '(max-width: 1000px)');
 
+  const data = [
+    { link: 'https://foodmood.menu/sushi-food-20241114201404', text: 'SUSHI BAR' },
+    { link: 'https://foodmood.menu/happy-donuts--20241114182210', text: 'BAKERY' },
+    { link: 'https://foodmood.menu/pizza-rest-20241114184154', text: 'PIZZERIA' },
+    { link: 'https://foodmood.menu/chinese-food-20241116123759', text: 'CHINESE FOOD' },
+    { link: 'https://foodmood.menu/mexican-20241114214204', text: 'MEXICAN' },
+    { link: 'https://foodmood.menu/seafood-20241116110506', text: 'SEAFOOD' },
+    { link: 'https://foodmood.menu/steak-house-demo-20241116224646 ', text: 'STEAK HOUSE' },
+    { link: 'https://foodmood.menu/georgian-cousine-demo-20241117084548', text: 'GEORGIAN COUSINE' },
+  ];
   return (
     <div>
       <Header isWhite={true}/>
@@ -36,10 +46,11 @@ function Page() {
 
         <div className={classes.box}>
           <h1 className={'mainTitle lh1 mb-[20px]'}>Create a Unique Menu for Any Type of Venue</h1>
-          <div className={classes.text}>With FoodMood, you can design a menu for any kind of business — from an elegant
+          <div className={classes.text}>With FoodMood, you can design a menu for any kind of business
+            <br/>— from an elegant
             restaurant to a cozy
             bakery, from a pizzeria to a signature steakhouse. Our service provides flexible tools that allow you to add
-            any menu items and categories, so your menu is attractive and perfectly reflects your establishment&apos;s style.
+            any menu items and categories, so your menu is attractive and perfectly reflects your establishment style.
           </div>
           <a href="tel:+88000000000" className="btn btn-black lg:hidden mt-[30px]" style={{fontSize: '16px', fontWeight: 400}}>
             get started
@@ -53,7 +64,8 @@ function Page() {
       <div className={"container relative z-[30] !lg:pt-[75px] !pt-[25px]"}>
         <div className={"grid lg:grid-cols-2 lg:gap-[15px] lg:mb-[35px] mb-[25px]"}>
           <h3 className={"mainTitle"}>Menu Examples </h3>
-          <p className={"text-[22px]"}>*FoodMood makes menu creation quick and intuitive — add dishes, photos,
+          <p className={"text-[22px]"}>*FoodMood makes menu creation quick and intuitive
+            <br/>— add dishes, photos,
             descriptions, and promotional
             offers in just a few minutes.*</p>
         </div>
@@ -61,31 +73,38 @@ function Page() {
         <Swiper
           modules={[Navigation, Autoplay]}
           spaceBetween={20}
-          slidesPerView={1.3} // 4 видимых слайда
+          slidesPerView={'auto'} // 4 видимых слайда
           navigation
           loop={true}
-          autoplay={{delay: 4000, disableOnInteraction: false}} // Автовоспроизведение каждые 3 сек
+          className={'menuExampleSwiper'}
+          direction={"vertical"}
+          autoplay={{delay: 422000, disableOnInteraction: false}} // Автовоспроизведение каждые 3 сек
           breakpoints={{
             450: {
               slidesPerView: 2,
               spaceBetween: 20,
+              direction: "horizontal"
             },
             700: {
               slidesPerView: 3,
               spaceBetween: 30,
+              direction: "horizontal"
             },
             1000: {
               slidesPerView: 4,
               spaceBetween: 30,
+              direction: "horizontal"
             },
           }}
         >
-          {['SUSHI BAR', 'BAKERY', 'PIZZERIA', 'RESTAURANT'].map((el, index) => (
+          {data.map((el, index) => (
             <SwiperSlide key={index}>
-              <div>
-                <img src={`/exp_${index + 1}.png`} className={classes.menuExample} alt=""/>
-                <div className="btn btn-black-outline mt-[15px]">{el}</div>
-              </div>
+              <a href={el.link}>
+                <div className={classes.menuExample}>
+                  <img src={`/exp_${index + 1}.png`} className={classes.menuExampleImage} alt=""/>
+                </div>
+                <div className="btn btn-black-outline mt-[15px]">{el.text}</div>
+              </a>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -115,11 +134,12 @@ function Page() {
 
         <section className={"md:grid flex flex-col-reverse md:grid-cols-2 gap-[20px] mt-[50px]"}>
           <div>
-            <img className={"rounded-[35px] border border-black"} src="/banner.jpg" alt=""/>
+            <video src="/vid.MP4" className={"rounded-[35px] border border-black"} controls={true} autoPlay loop muted></video>
+            {/*<img className={"rounded-[35px] border border-black"} src="/banner.jpg" alt=""/>*/}
           </div>
           <div className={"bg-[#77D0F6] py-[30px] rounded-[35px] flex flex-col items-center justify-center text-center border border-black"}>
-            <h4 className={"mainTitle"}>Create Your Own Menu With
-              Food&nbsp;Mood</h4>
+            <h4 className={"mainTitle"}>Create Your Own Menu With<br/>
+              Food Mood</h4>
           </div>
         </section>
 

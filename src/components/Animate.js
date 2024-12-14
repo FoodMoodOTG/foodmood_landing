@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,8 +13,8 @@ function Animate({ className, children }) {
 
 
   useEffect(() => {
-    // Настройка анимации с использованием ScrollTrigger
-    if(isMob){
+    const mob = window.innerWidth < 700
+    if(mob){
       return
     }
 
@@ -30,13 +32,13 @@ function Animate({ className, children }) {
         stagger: 0.05, // Задержка между появлением каждого слова
         scrollTrigger: {
           trigger: textRef.current,
-          start:  isMob ? 'top 110%' : 'top 85%',
-          end: isMob ? 'top 90%' : 'top 55%',
+          start:  mob ? 'top 110%' : 'top 85%',
+          end: mob ? 'top 90%' : 'top 55%',
           scrub: 1,
         },
       }
     );
-  }, []);
+  }, [isMob]);
 
 
   return (

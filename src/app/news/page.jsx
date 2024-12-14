@@ -31,7 +31,7 @@ function Page(props) {
             {Array.from({ length: 15 }).map((item, index) => (
               <NewsItem
                 key={index}
-                img={''}
+                img={null}
                 title={'News Title “Description”'}
                 tags={['Topic', 'Topic Topic']}
                 link={'/news/1'}

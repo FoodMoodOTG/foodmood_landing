@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useEffect, useRef, useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {z} from 'zod';
@@ -44,7 +46,8 @@ function Form(props) {
   const phoneImgRef = useRef(null);
 
   useEffect(() => {
-    if(isMob){
+    const mob = window.innerWidth < 700
+    if(mob){
       return
     }
 
@@ -64,7 +67,7 @@ function Form(props) {
           scrub: true, // плавная анимация при скролле
         }
       });
-  }, []);
+  }, [isMob]);
 
   const [loading, setLoading] = useState(false)
 
